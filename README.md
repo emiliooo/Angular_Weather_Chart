@@ -1,4 +1,4 @@
-#About
+# About
 
 the project shows information on the maximum temperature or minimum temperature and rains in selected countries
 The data is presented graphically
