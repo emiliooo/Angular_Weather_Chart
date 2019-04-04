@@ -1,6 +1,15 @@
+#About
+
+the project shows information on the maximum temperature or minimum temperature and rains in selected countries
+The data is presented graphically
+
+used angular material, rxjs, angular version 7 up and Chart.js
+
+
 # WeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+
 
 ## Development server
 

@@ -3,7 +3,7 @@
   
   <form [formGroup]="weatherQueryForm" (ngSubmit)="onFormSubmit(weatherQueryForm.value)"> 
   <mat-form-field>
-    <mat-select matInput formControlName="region" placeholder="Select Region">
+    <mat-select matInput formControlName="region" placeholder="Regions">
       <mat-option *ngFor="let region of regions" [value]="region">{{region}}</mat-option>
     </mat-select>
   </mat-form-field>
@@ -17,14 +17,15 @@
   <mat-form-field>
       <input matInput [matDatepicker]="picker1" formControlName="startDate" placeholder="Start Date">
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
+      <mat-datepicker #picker1 startView="year" [startAt]="fromDate"></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
         <input matInput [matDatepicker]="picker2" formControlName="endDate" placeholder="End Date">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2></mat-datepicker>
+        <mat-datepicker #picker2 startView="year" [startAt]="toDate"></mat-datepicker>
       </mat-form-field>
+      
     <button mat-raised-button color="primary">Draw Chart</button>
 
   </form>   
