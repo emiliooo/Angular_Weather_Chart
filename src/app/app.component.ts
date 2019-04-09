@@ -57,7 +57,7 @@ export class AppComponent {
   filterJson(startmonth, startyear, endmonth, endyear, metric, region) {
     this._weather.weatherForecast(metric, region)
       .pipe(
-        map(res => res.filter(data => data.year > startyear && data.year <= endyear)),
+        map(res => res.filter(data => data.year >= startyear && data.year <= endyear)),
         map(res => res.splice(startmonth)),
         map(res => res.splice(0, res.length - 12 + endmonth))
       )
@@ -113,12 +113,12 @@ export class AppComponent {
     let monthDataset = [];
     let valueDataset = [];
 
-    for (let i = 0; i < jsonArray.length; i++) {
-      yearDataset.push(res[i].year);
-      monthDataset.push(res[i].month);
-      valueDataset.push(res[i].value);
-    }
-
+    jsonArray.forEach(element => {
+      yearDataset.push(element.year);
+      monthDataset.push(element.month);
+      valueDataset.push(element.value);
+    });
+    
     return { yearDataset, valueDataset, monthDataset };
   }
 }
